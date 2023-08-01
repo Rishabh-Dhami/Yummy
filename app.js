@@ -203,100 +203,113 @@ const updateNumber=()=>{
 // #event section
 
 
-function myFunction(x) {
-    if (x.matches) { // If media query matches
+const resizeeventHandler=(e)=>{
+    const eventBar = document.querySelectorAll('#event-bar div');
+  const eventSlides = document.querySelectorAll('.event-slide');
+  const gallerySlides = document.querySelectorAll('.gallery-slide');
 
-        const gallerySlides=document.querySelectorAll(".gallery-slide");
+  console.log(e.currentTarget.innerWidth)
 
-gallerySlides.forEach((slide,index)=>{
-    slide.style.left=`${index*34}%`;
-})
+  if(e.currentTarget.innerWidth >= 800){
+
+    gallerySlides.forEach((slide)=>{
+        slide.style.left=`${18}%`;
+    })
+
+    eventSlides.forEach((slide)=>{
+        slide.style.left=`${0}%`;
+    })
 
 
-        const eventSlide=document.querySelectorAll(".event-slide")
-        eventSlide.forEach((slide,index)=>{
-            slide.style.left=`${index*100}%`;
+    const eventsliding=(input="")=>{
+        eventSlides.forEach((slide)=>{
+            slide.style.transform=`translateX(${0}%)`
         })
-        
-        const eventBar=document.querySelectorAll("#event-bar div");
-        
+    }
+    
+    const removeEbarActive=()=>{
         eventBar.forEach((bar,index)=>{
+            if(index===0) return;
+            bar.classList.remove("active") 
+         })
+
+    eventBar.forEach((bar,index)=>{
         bar.addEventListener('click',function(){
             removeEbarActive()
-            bar.classList.add("active")
-            eventsliding(index)
+            eventsliding(index);
         })
         })
-        
-        
-        const eventsliding=(input="")=>{
-            eventSlide.forEach((slide)=>{
-                slide.style.transform=`translateX(-${input*100}%)`
-            })
-        }
-        
-        const removeEbarActive=()=>{
-            eventBar.forEach((bar)=>{
-                bar.classList.remove("active") 
-             })
-        }
-      }else{
-        return ;
-      }
-      }
-
-  
-  
-  var x = window.matchMedia("(max-width: 799px)")
-  myFunction(x) // Call listener function at run time
-  x.addListener(myFunction) // Attach listener function on state changes
-
-
-
-  function mymobileFunction(y){
-    if(y.matches){
-
-        const gallerySlides=document.querySelectorAll(".gallery-slide");
-
-        gallerySlides.forEach((slide,index)=>{
-            slide.style.left=`${index*100}%`;
-        })
-
-        const galleryBar=document.querySelectorAll("#gallery-bar div");
-        
-        galleryBar.forEach((bar,index)=>{
-        bar.addEventListener('click',function(){
-            removeGbarActive()
-            bar.classList.add("active")
-            gallerysliding(index)
-        })
-        })
-        
-        
-        const gallerysliding=(input="")=>{
-            gallerySlides.forEach((slide)=>{
-                slide.style.transform=`translateX(-${input*100}%)`
-            })
-        }
-        
-        const removeGbarActive=()=>{
-            galleryBar.forEach((bar)=>{
-                bar.classList.remove("active") 
-             });
-
-
     }
-  }else{
-    return ;
-  }
+    
+    
+    }else if(e.currentTarget.innerWidth < 800){
+    
+    gallerySlides.forEach((slide,index)=>{
+        slide.style.left=`${index*34}%`;
+    })
+    
+            eventSlides.forEach((slide,index)=>{
+                slide.style.left=`${index*100}%`;
+            })
+            
+           
+            eventBar.forEach((bar,index)=>{
+            bar.addEventListener('click',function(){
+                removeEbarActive()
+                bar.classList.add("active")
+                eventsliding(index)
+            })
+            })
+            
+            
+            const eventsliding=(input="")=>{
+                eventSlides.forEach((slide)=>{
+                    slide.style.transform=`translateX(-${input*100}%)`
+                })
+            }
+            
+            const removeEbarActive=()=>{
+                eventBar.forEach((bar)=>{
+                    bar.classList.remove("active") 
+                 })
+               }
+}else if(e.currentTarget.innerWidth <488){
+    const gallerySlides=document.querySelectorAll(".gallery-slide");
+
+    gallerySlides.forEach((slide,index)=>{
+        slide.style.left=`${index*100}%`;
+    })
+
+    const galleryBar=document.querySelectorAll("#gallery-bar div");
+    
+    galleryBar.forEach((bar,index)=>{
+    bar.addEventListener('click',function(){
+        removeGbarActive()
+        bar.classList.add("active")
+        gallerysliding(index)
+    })
+    })
+    
+    
+    const gallerysliding=(input="")=>{
+        gallerySlides.forEach((slide)=>{
+            slide.style.transform=`translateX(-${input*100}%)`
+        })
+    }
+    
+    const removeGbarActive=()=>{
+        galleryBar.forEach((bar)=>{
+            bar.classList.remove("active") 
+         });
+}
+}
 }
 
-  var y = window.matchMedia("(max-width: 477px)")
-  mymobileFunction(y) // Call listener function at run time
-  y.addListener(mymobileFunction) // Attach listener function on state changes
+ // Attach listener function on state changes
 
 
 
+  window.addEventListener("resize",resizeeventHandler)
 
  
   
