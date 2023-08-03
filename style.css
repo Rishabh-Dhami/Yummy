@@ -10,6 +10,22 @@
     margin: 0;
 }
 
+body::-webkit-scrollbar{
+    width: 5px;
+    background-color: none;
+}
+
+
+body::-webkit-scrollbar-thumb{
+    background-color: gray;
+    height: 13%;
+    border-radius: 40px;
+}
+*::selection{
+    background-color: red;
+    color: white;
+}
+
 html,body{
     width: 100%;
     height: 100%;
@@ -18,6 +34,8 @@ html,body{
 #main{
     width: 100%;
 }
+
+
 
 
 .section-p1 {
@@ -31,6 +49,16 @@ h1 {
     font-family: 'Indie Flower', sans-serif;
     color: grey;
     opacity: 1;
+}
+
+#cursor{
+    position: fixed;
+    width: 12px;
+    height: 12px;
+    background:#ce1212;
+    border-radius: 50%;
+    z-index: 99999;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s;
 }
 
 p {
@@ -130,13 +158,7 @@ a.white-btn:hover {
     font-size: .5vw;
 }
 
-#cursor{
-    position: fixed;
-    padding: 8px;
-    background:#ce1212;
-    border-radius: 50%;
-    z-index: 999;
-}
+
 
 
 
