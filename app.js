@@ -10,47 +10,47 @@ window.addEventListener("load",()=>{
 //  cursor srection
 var timeout;
 
-// const cursorSize=()=>{
-//   xScale = 1;
-//   yScale = 1;
+const cursorSize=()=>{
+  xScale = 1;
+  yScale = 1;
 
-//   xPrev = 0;
-//   yPrev = 0;
-//   window.addEventListener("mousemove", (dets) => {
-//     clearTimeout(timeout)
-//     var xDiff = dets.clientX - xPrev;
-//     var yDiff = dets.clientY - yPrev;
+  xPrev = 0;
+  yPrev = 0;
+  window.addEventListener("mousemove", (dets) => {
+    clearTimeout(timeout)
+    var xDiff = dets.clientX - xPrev;
+    var yDiff = dets.clientY - yPrev;
 
-//     xPrev = dets.clientX;
-//     y = dets.clientY;
+    xPrev = dets.clientX;
+    y = dets.clientY;
 
-//     xScale = gsap.utils.clamp(.8, 1.2, xDiff)
-//     yScale = gsap.utils.clamp(.8, 1.2, yDiff)
+    xScale = gsap.utils.clamp(.8, 1.2, xDiff)
+    yScale = gsap.utils.clamp(.8, 1.2, yDiff)
 
-//     cursorMove(xScale, yScale);
+    cursorMove(xScale, yScale);
 
-//     timeout= setTimeout(function(){
-//       cursor.style.transform = `translate( ${dets.clientX}px,${dets.clientY}px)
-//     scale(${1},${1})`
-//     },100)
+    timeout= setTimeout(function(){
+      cursor.style.transform = `translate( ${dets.clientX}px,${dets.clientY}px)
+    scale(${1},${1})`
+    },100)
 
-//   })
-// }
-
-
-
-// cursorSize()
+  })
+}
 
 
-// const cursor = document.querySelector("#cursor");
-// const cursorMove = (xScale, yScale) => {
-//   window.addEventListener("mousemove", (move) => {
-//     cursor.style.transform = `translate( ${move.clientX}px,${move.clientY}px)
-//     scale(${xScale},${yScale})`
-//   })
-// }
 
-// cursorMove()
+cursorSize()
+
+
+const cursor = document.querySelector("#cursor");
+const cursorMove = (xScale, yScale) => {
+  window.addEventListener("mousemove", (move) => {
+    cursor.style.transform = `translate( ${move.clientX}px,${move.clientY}px)
+    scale(${xScale},${yScale})`
+  })
+}
+
+cursorMove()
 
 
 
