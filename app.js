@@ -1,10 +1,13 @@
-const cursorSize = () => {
+var timeout;
+
+const cursorSize=()=>{
   xScale = 1;
   yScale = 1;
 
   xPrev = 0;
   yPrev = 0;
   window.addEventListener("mousemove", (dets) => {
+    clearTimeout(timeout)
     var xDiff = dets.clientX - xPrev;
     var yDiff = dets.clientY - yPrev;
 
@@ -14,9 +17,17 @@ const cursorSize = () => {
     xScale = gsap.utils.clamp(.8, 1.2, xDiff)
     yScale = gsap.utils.clamp(.8, 1.2, yDiff)
 
-    cursorMove(xScale, yScale)
+    cursorMove(xScale, yScale);
+
+    timeout= setTimeout(function(){
+      cursor.style.transform = `translate( ${move.clientX}px,${move.clientY}px)
+    scale(${1},${1})`
+    },100)
+
   })
 }
+
+
 
 cursorSize()
 
