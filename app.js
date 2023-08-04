@@ -1,3 +1,13 @@
+// preloader section
+
+const preloader=document.querySelector("#preloader");
+
+window.addEventListener("load",()=>{
+  preloader.style.display="none"
+})
+
+
+//  cursor srection
 var timeout;
 
 const cursorSize=()=>{
@@ -210,19 +220,19 @@ homeBar.addEventListener("click", function () {
 // Get the target element
 const targetCountingElements = document.querySelectorAll(".counter-numbers");
 
-// Options for the Intersection Observer
+// // Options for the Intersection Observer
 const options = {
   root: null, // Use the viewport as the root
   rootMargin: "0px", // No margin
   threshold: 0.8, // Trigger when at least 80% of the element is visible
 };
 
-// Create an observer
+// // Create an observer
 const observer = new IntersectionObserver((entries, observer) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
-      // Execute your JavaScript code when the target element is in view
-      // For example, you can add a class to the element
+//       // Execute your JavaScript code when the target element is in view
+//       // For example, you can add a class to the element
       targetCountingElements.forEach((myValue) => {
         let target_count = myValue.dataset.count;
         let init_count = myValue.innerText;
@@ -245,15 +255,17 @@ const observer = new IntersectionObserver((entries, observer) => {
         updateNumber();
       });
 
-      // Disconnect the observer after the element is in view (if needed)
+//       // Disconnect the observer after the element is in view (if needed)
       observer.disconnect();
     }
   });
 }, options);
 
 // Start observing the target element
-targetCountingElements.forEach((targetElement) => observer.observe(targetElement));
-
+targetCountingElements.forEach((targetElement) =>{
+  observer.observe(targetElement)
+}
+);
 
 
 
