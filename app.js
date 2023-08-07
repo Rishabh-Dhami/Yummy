@@ -201,11 +201,20 @@ const removeFollow = () => {
 const xbar = document.querySelector("#xbar");
 const nav = document.querySelector("#navbar")
 
+const navbarTag=document.querySelectorAll("#navbar a");
+
+navbarTag.forEach(navbar=>{
+  navbar.addEventListener("click",()=>{
+    nav.classList.add("active");
+    method.classList.remove("active");
+  method2.classList.remove("active");
+  })
+})
 
 xbar.addEventListener('click', function () {
   nav.classList.add("active");
   method.classList.remove("active");
-  method2.classList.remove("active")
+  method2.classList.remove("active");
 })
 
 
