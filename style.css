@@ -204,6 +204,7 @@ a.white-btn:hover {
     font-size: 19px;
     font-weight: 530;
     color: grey;
+    position: relative;
 }
 #navbar li{
     padding-bottom: 5px;
@@ -230,17 +231,22 @@ a.white-btn:hover {
     display: none;
 }
 
+
+
 #method,#method-2 {
     position: absolute;
     top: 33px;
-    left: 70%;
+    left: 0%;
     background-color: white;
     display: flex;
     flex-direction: column;
     padding: 20px 5px;
     border-radius: 4px;
     display: none;
-   
+}
+
+#method{
+    width: 225px;
 }
 
 
@@ -262,7 +268,7 @@ a.white-btn:hover {
 
 #method-2 {
     top: 110px;
-    left: 50%;
+    left: -69%;
     display: none;
 }
 
@@ -1214,13 +1220,15 @@ h2 {
 }
 
 #method, #method-2 {
-    top: 50%;
+    bottom: 50%;
+    min-height: 20vh;
     left: 24%;
 }
 
 #method-2{
-    top: 58%;
-    left: 54%;
+    width: 200px;
+    top: 55%;
+    left: 80%;
 }
 
 /* 
@@ -1474,16 +1482,20 @@ header section */
     margin: 5px 0;
     padding: 0px 15px;
     font-size: 30px;
+    position: relative;
 }
 
 #method, #method-2 {
-    top: 45%;
-    left: 34%;
+    width: 225px;
+    bottom: 0%;
+    left: 40%;
+    min-height: 25vh;
 }
 
 #method-2{
-    top: 70%;
-    left: 50%;
+    width: 175px;
+    bottom: 20%;
+    left: -70%;
 }
 
 /* aboutsection */
