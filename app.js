@@ -137,13 +137,15 @@ gallerySlides.forEach((slide, index) => {
 // dropdown function
 
 const method = document.getElementById("method")
+const dropdown=document.querySelector("#navbar .drop-down");
 
+console.log(dropdown)
 const method2 = document.getElementById("method-2")
 
-const dropdown = () => {
+dropdown.addEventListener("click",()=>{
   method.classList.toggle("active");
   method2.classList.remove("active")
-}
+})
 
 const dropLeft = () => {
   method2.classList.toggle("active")
@@ -206,8 +208,6 @@ const navbarTag=document.querySelectorAll("#navbar a");
 navbarTag.forEach(navbar=>{
   navbar.addEventListener("click",()=>{
     nav.classList.add("active");
-    method.classList.remove("active");
-  method2.classList.remove("active");
   })
 })
 
