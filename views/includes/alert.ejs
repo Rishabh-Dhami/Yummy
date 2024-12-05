@@ -1,0 +1,15 @@
+<div class="text-center " id="alert-box" >
+    <% if (success_msg[0]) { %>
+      <div class="alert alert-warning alert-dismissible fade show" style="width: 60%;" role="alert">
+        <%- success_msg[0] %>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      <% } %>
+      <% if (error_msg[0]) { %>
+        <div class="alert alert-warning alert-dismissible fade show"style="width: 60%;" role="alert">
+          <%- error_msg[0] %>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      <% } %>
+      
+</div>

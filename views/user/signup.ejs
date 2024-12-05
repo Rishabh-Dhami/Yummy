@@ -1,0 +1,20 @@
+<%- layout('layout/boilerplate.ejs') -%>
+<div id="form-row">
+    <form action="/signup" method="post">
+        <h3>Create an account <span>.</span></h3>
+        <div class="mb-3">
+            <label for="username" class="form-label"><strong>Username:</strong></label>
+            <input type="text" class="form-control" id="username" name="username" placeholder="Enter the username">
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label"><strong>Email:</strong></label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter the email">
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label"><strong>Password:</strong></label>
+            <input type="password" class="form-control" name="password" id="password" placeholder="Enter the password">
+          </div>
+          <button type="submit" class="btn login-btn">Create Account</button>
+    </form>
+    <p>Already  have an account? <a href="/login">Login</a></p>
+</div>
