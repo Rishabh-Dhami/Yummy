@@ -5,6 +5,9 @@
   "scripts": {
     "dev": "nodemon server.js"
   },
+  "engines": {
+    "node" : "20.18.0"
+  },
   "type": "module",
   "keywords": [],
   "author": "",
